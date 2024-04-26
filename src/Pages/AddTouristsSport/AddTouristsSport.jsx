@@ -1,12 +1,16 @@
 import { Helmet } from "react-helmet";
 import svg from "../../assets/more/add.svg";
+import { UseAuth } from "../../Hook/UseAuth";
 
 export const AddTouristsSport = () => {
+
+const {user} = UseAuth()
+
   const handleAdd = (e) => {
     e.preventDefault();
     const form = e.target;
-    const userName = form.userName.value;
-    const userEmail = form.userEmail.value;
+    const userName = user?.displayName;
+    const userEmail = user?.email;
     const touristName = form.tourists_spot_name.value;
     const countryName = form.country_Name.value;
     const photo = form.photo.value;
@@ -55,7 +59,7 @@ export const AddTouristsSport = () => {
               <img src={svg} alt="" className="h-96" />
             </div>
             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-2  border  p-2">
-              <div className="col-span-full">
+              {/* <div className="col-span-full">
                 <label htmlFor="userName" className="text-sm">
                   User Name
                 </label>
@@ -78,7 +82,7 @@ export const AddTouristsSport = () => {
                   placeholder="Enter email here"
                   className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
-              </div>
+              </div> */}
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="tourists_spot_name" className="text-sm">
                   Tourists Spot Name

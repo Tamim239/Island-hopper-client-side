@@ -1,4 +1,4 @@
-export const AllTouristsSport = () => {
+export const TouristsSpots = () => {
   return (
     <div>
       <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">

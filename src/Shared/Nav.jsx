@@ -10,8 +10,8 @@ export const Nav = () => {
   const [open, setOpen] = useState(false);
   const { user, logOut } = UseAuth();
 
-  console.log(user?.photoURL)
-  console.log(user?.displayName)
+  // console.log(user?.photoURL)
+  // console.log(user?.displayName)
 
   const navLinks = (
     <>
