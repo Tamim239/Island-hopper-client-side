@@ -1,12 +1,46 @@
+import { Helmet } from "react-helmet";
 import svg from "../../assets/more/add.svg";
 
 export const AddTouristsSport = () => {
+  const handleAdd = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const userName = form.userName.value;
+    const userEmail = form.userEmail.value;
+    const touristName = form.tourists_spot_name.value;
+    const countryName = form.country_Name.value;
+    const photo = form.photo.value;
+    const location = form.location.value;
+    const averageCost = form.average_cost.value;
+    const seasonality = form.seasonality.value;
+    const travelTime = form.travel_time.value;
+    const totalVisitor = form.totalVisitorsPerYear.value;
+    const description = form.description.value;
+
+    const Collection = {
+      userName,
+      userEmail,
+      touristName,
+      countryName,
+      photo,
+      location,
+      averageCost,
+      seasonality,
+      travelTime,
+      totalVisitor,
+      description,
+    };
+    console.log(Collection);
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>Island Hopper || add Tourists Spot</title>
+      </Helmet>
       <section className=" bg-slate-300 p-6 dark:bg-gray-100 dark:text-gray-900">
         <form
-          noValidate=""
-          action=""
+          onSubmit={handleAdd}
           className="container flex flex-col mx-auto space-y-12"
         >
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-gray-50">
@@ -18,12 +52,12 @@ export const AddTouristsSport = () => {
                 unforgettable odyssey filled with moments that linger in your
                 heart long after the journey ends.
               </p>
-              <img src={svg} alt="" className="h-96"/>
+              <img src={svg} alt="" className="h-96" />
             </div>
             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-2  border  p-2">
               <div className="col-span-full">
                 <label htmlFor="userName" className="text-sm">
-                User Name
+                  User Name
                 </label>
                 <input
                   id="userName"
@@ -35,7 +69,7 @@ export const AddTouristsSport = () => {
               </div>
               <div className="col-span-full">
                 <label htmlFor="userEmail" className="text-sm">
-                User Email
+                  User Email
                 </label>
                 <input
                   id="userEmail"
@@ -47,7 +81,7 @@ export const AddTouristsSport = () => {
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="tourists_spot_name" className="text-sm">
-                Tourists Spot Name
+                  Tourists Spot Name
                 </label>
                 <input
                   id="tourists_spot_name"
@@ -75,6 +109,7 @@ export const AddTouristsSport = () => {
                 </label>
                 <input
                   type="text"
+                  name="photo"
                   placeholder="Enter Photo URL"
                   className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
@@ -95,7 +130,7 @@ export const AddTouristsSport = () => {
                   Average Cost
                 </label>
                 <input
-                name="average_cost"
+                  name="average_cost"
                   type="text"
                   placeholder="Enter Average Cost"
                   className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
@@ -103,7 +138,7 @@ export const AddTouristsSport = () => {
               </div>
               <div className="col-span-full sm:col-span-2">
                 <label htmlFor="seasonality" className="text-sm">
-                Seasonality
+                  Seasonality
                 </label>
                 <input
                   id="seasonality"
@@ -138,14 +173,24 @@ export const AddTouristsSport = () => {
                 />
               </div>
               <div className="col-span-full">
-              <label htmlFor="totalVisitorsPerYear" className="text-sm">
+                <label htmlFor="totalVisitorsPerYear" className="text-sm">
                   Description
                 </label>
-                <textarea name="" id="" cols="30" rows="3" placeholder="short description..."  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"></textarea>
-
+                <textarea
+                  name="description"
+                  id=""
+                  cols="30"
+                  rows="3"
+                  placeholder="short description..."
+                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                ></textarea>
               </div>
               <div className="col-span-full">
-                <input type="submit" value="Add"  className="w-full btn btn-primary rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"/>
+                <input
+                  type="submit"
+                  value="Add"
+                  className="w-full btn btn-primary rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                />
               </div>
             </div>
           </fieldset>
