@@ -10,7 +10,7 @@ export const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [handleError, setHandleError] = useState("");
     const navigate = useNavigate()
-    const {createUser} = UseAuth()
+    const {createUser, updateUser, logOut} = UseAuth()
 
     const {
         register,
@@ -23,7 +23,6 @@ export const Register = () => {
         const { name, email, password, photoURL } = data;
         console.log(name, email, password, photoURL);
         setHandleError("");
-        console.log(password.length);
         if (password.length < 6) {
           return setHandleError("Ensure length must be at least 6 character");
         }
@@ -36,12 +35,16 @@ export const Register = () => {
     
         createUser(email, password)
           .then((res) => {
+            logOut()
             console.log(res.user);
+            updateUser(name, photoURL)
+            .then(()=>{
+              toast.success('successfully registered')
+              setTimeout(() => {
+                navigate('/login')
+                 }, 1000);
+               })
             // new add mongodb
-            toast.success('successfully registered')
-            setTimeout(() => {
-              navigate('/login')
-               }, 1000);
             // const createdAt = res.user?.metadata?.creationTime;
             // const user = { email, createdAt };
             // fetch("https://coffe-store-server-liart.vercel.app/user", {
@@ -68,7 +71,7 @@ export const Register = () => {
     <div className=" bg-[url('/loginf.jpg')] p-5 my-5 rounded-xl bg-cover bg-no-repeat bg-bottom">
     <Helmet>
       <meta charSet="utf-8" />
-      <title>Espresso || SignUp</title>
+      <title>Island Hopper || Register</title>
     </Helmet>
     <div data-aos="fade-down-left"
   data-aos-easing="linear"

@@ -71,7 +71,7 @@ export const Login = () => {
     <div className="bg-[url('/loginf.jpg')] p-5 my-5 rounded-xl bg-cover bg-no-repeat bg-bottom">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Espresso || SignIn</title>
+        <title>Island Hopper || Login</title>
       </Helmet>
       <div
         className="w-full max-w-md mx-auto p-8 space-y-2 my-6 rounded-xl text-white border"

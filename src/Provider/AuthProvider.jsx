@@ -1,6 +1,7 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.config";
+import PropTypes from 'prop-types';
 
 export const AuthContext = createContext(null);
 
@@ -13,6 +14,12 @@ export const AuthProvider = ({ children }) => {
  const createUser = (email, password) =>{
     return createUserWithEmailAndPassword(auth, email, password)
  }
+const updateUser = (name, photo)=>{
+    return updateProfile(auth.currentUser,{
+        displayName: name, photoURL: photo
+    })
+}
+
  const signIn = (email, password)=>{
     return signInWithEmailAndPassword(auth, email, password)
  }
@@ -45,6 +52,11 @@ return ()=>{
     createGoogle,
     createGithub,
     logOut,
+    updateUser
   };
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };
+
+AuthProvider.propTypes ={
+    children: PropTypes.node
+}
