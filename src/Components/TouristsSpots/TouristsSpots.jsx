@@ -1,13 +1,22 @@
 import { CiLocationOn } from "react-icons/ci";
 import { IoTimeOutline } from "react-icons/io5";
-import { UseImages } from "../../Hook/UseImages";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 export const TouristsSpots = () => {
-  const {data} = UseImages();
-console.log(data)
+  const [usersData, setUsers] = useState([])
+  
+  useEffect(()=>{
+    axios.get('http://localhost:5000/images')
+    .then(data => {
+      setUsers(data.data)
+    })
+  },[])
+  
   return (
     <div className="my-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:w-4/5 mx-auto">
        {
-        data?.slice(0,6).map(img =><div className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800" key={img?._id}>
+       usersData?.slice(0,6).map(img =><div className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800" key={img?._id}>
         <img
           src={img?.photo}
           alt=""
@@ -37,12 +46,14 @@ console.log(data)
             </p>
             </div>
           </div>
+          <Link to={`/viewDetails/${img?._id}`}>
           <button
             type="button"
             className="btn btn-primary"
           >
            View Details
           </button>
+          </Link>
         </div>
       </div>)
        }

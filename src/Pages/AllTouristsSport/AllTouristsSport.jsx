@@ -1,9 +1,30 @@
+import { CiLocationOn } from "react-icons/ci";
+import { IoTimeOutline } from "react-icons/io5";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 export const AllTouristsSport = () => {
+  const [usersData, setUsers] = useState([])
+  
+    useEffect(()=>{
+      axios.get('http://localhost:5000/images')
+      .then(data => {
+        setUsers(data.data)
+      })
+    },[])
+ 
+    const handleSort = () =>{
+      axios.get(`http://localhost:5000/sorted`)
+      .then(data => {
+        console.log(data.data)
+      })
+    }
+
   return (
-    <div>
-      <div className="text-center btn-primary">
-        <div className="dropdown dropdown-bottom">
-          <div tabIndex={0} role="button" className="btn m-1">
+    <div className="p-5">
+      <div className="text-center btn-primary text-black">
+        <div className="dropdown dropdown-bottom ">
+          <div tabIndex={0} role="button" className="btn m-1 text-white">
             Sort
           </div>
           <ul
@@ -11,36 +32,55 @@ export const AllTouristsSport = () => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>ascending </a>
-            </li>
-            <li>
-              <a>descending </a>
+              <a onClick={handleSort}>Average Cost</a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-        <img
-          src="https://source.unsplash.com/640x480/?3"
-          alt=""
-          className="h-80 dark:bg-gray-500 aspect-video"
-        />
-        <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-          <span className="text-xs uppercase dark:text-gray-600">
-            Join, it is free
-          </span>
-          <h3 className="text-3xl font-bold">
-            We are not reinventing the wheel
-          </h3>
-          <p className="my-6 dark:text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aliquam possimus quas, error esse quos.
-          </p>
-          <button type="button" className="self-start">
-            Action
-          </button>
+     <div className="grid md:grid-cols-2 gap-6">
+     {usersData?.map((users) => (
+        <div
+          className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row border my-4"
+          key={users?._id}
+        >
+          <img
+            src={users?.photo}
+            alt=""
+            className="md:h-72 dark:bg-gray-500 lg:w-60 object-cover"
+          />
+          <div className="flex flex-col justify-center flex-1 p-3 dark:bg-gray-50">
+            <div className="flex flex-col justify-between p-3 space-y-3">
+              <div className="">
+                <h2 className="text-4xl font-semibold tracking-wide">
+                  {users?.touristName}
+                </h2>
+                <div className="flex justify-between">
+                  <p className="dark:text-gray-800 text-xl flex items-center gap-1">
+                    <CiLocationOn /> {users?.location}
+                  </p>
+                  <p className="dark:text-gray-800 text-xl flex items-center gap-1">
+                    <IoTimeOutline /> {users?.travelTime}
+                  </p>
+                </div>
+                <div className="pl-5">
+                  <p className="dark:text-gray-800 text-xl flex justify-between items-center">
+                    seasonality <span className="text-[#1CD8A4]">{users?.seasonality}</span>
+                  </p>
+                  <p className="dark:text-gray-800 text-xl flex justify-between items-center">
+                    starting <br />
+                    <span className="text-[#1CD8A4]">{users?.averageCost}</span>
+                  </p>
+                <p className="flex justify-between items-center text-xl">Average Per Year <span className="text-[#1CD8A4]">{users?.totalVisitor}</span></p>
+                </div>
+              </div>
+            </div>
+            <button type="button" className="self-end btn btn-secondary">
+              View Details
+            </button>
+          </div>
         </div>
-      </div>
+      ))}
+     </div>
     </div>
   );
 };

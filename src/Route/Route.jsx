@@ -6,6 +6,8 @@ import { Register } from "../Components/Register/Register";
 import { AllTouristsSport } from "../Pages/AllTouristsSport/AllTouristsSport";
 import { AddTouristsSport } from "../Pages/AddTouristsSport/AddTouristsSport";
 import { MyList } from "../Pages/MyList/MyList";
+import { UpdateTourists } from "../Components/UpdateTourists/UpdateTourists";
+import { ViewDetails } from "../Components/ViewDetails";
 
 export const router = createBrowserRouter([
     {
@@ -34,9 +36,19 @@ export const router = createBrowserRouter([
           element: <AddTouristsSport></AddTouristsSport>,
         },
         {
+          path: "/viewDetails/:id",
+          element: <ViewDetails></ViewDetails>,
+          loader: ({params})=> fetch(`http://localhost:5173/view/${params.id}`)
+        },
+        {
           path: "/myList",
           element: <MyList></MyList>,
         },
+        {
+          path: "/updateTourists/:id",
+          element: <UpdateTourists></UpdateTourists>,
+          loader: ({params}) => fetch(`http://localhost:5173/myList/${params.id}`),
+        }
       ],
     },
   ]);
