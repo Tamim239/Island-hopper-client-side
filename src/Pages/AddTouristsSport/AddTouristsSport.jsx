@@ -1,10 +1,11 @@
 import { Helmet } from "react-helmet";
 import svg from "../../assets/more/add.svg";
 import { UseAuth } from "../../Hook/UseAuth";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 export const AddTouristsSport = () => {
-
-const {user} = UseAuth()
+  const { user } = UseAuth();
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const {user} = UseAuth()
     const totalVisitor = form.totalVisitorsPerYear.value;
     const description = form.description.value;
 
-    const Collection = {
+    const collection = {
       userName,
       userEmail,
       touristName,
@@ -34,7 +35,14 @@ const {user} = UseAuth()
       totalVisitor,
       description,
     };
-    console.log(Collection);
+    console.log(collection);
+    axios.post("http://localhost:5000/images", collection).then((data) => {
+      console.log(data.data);
+      if (data?.data?.insertedId) {
+        toast.success("successfully added");
+      }
+      form.reset();
+    });
   };
 
   return (
@@ -59,30 +67,6 @@ const {user} = UseAuth()
               <img src={svg} alt="" className="h-96" />
             </div>
             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-2  border  p-2">
-              {/* <div className="col-span-full">
-                <label htmlFor="userName" className="text-sm">
-                  User Name
-                </label>
-                <input
-                  id="userName"
-                  type="text"
-                  name="userName"
-                  placeholder="Enter User Name"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
-                />
-              </div>
-              <div className="col-span-full">
-                <label htmlFor="userEmail" className="text-sm">
-                  User Email
-                </label>
-                <input
-                  id="userEmail"
-                  type="email"
-                  name="userEmail"
-                  placeholder="Enter email here"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
-                />
-              </div> */}
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="tourists_spot_name" className="text-sm">
                   Tourists Spot Name
@@ -92,20 +76,27 @@ const {user} = UseAuth()
                   type="text"
                   name="tourists_spot_name"
                   placeholder="Enter Tourists Spot Name"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="country_Name" className="text-sm">
                   Country Name
                 </label>
-                <input
-                  id="country_Name"
-                  name="country_Name"
-                  type="text"
-                  placeholder="Enter Country Name"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
-                />
+                <label htmlFor="country" className="form-control w-full">
+                  <select name="country_Name" className="select select-bordered">
+                    <option selected>
+                      Select Country
+                    </option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value='Thailand'>Thailand</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Cambodia">Cambodia</option>
+                  </select>
+                </label>
               </div>
               <div className="col-span-full">
                 <label htmlFor="photo" className="text-sm">
@@ -115,7 +106,7 @@ const {user} = UseAuth()
                   type="text"
                   name="photo"
                   placeholder="Enter Photo URL"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
@@ -126,7 +117,7 @@ const {user} = UseAuth()
                   type="text"
                   name="location"
                   placeholder="Location here"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
@@ -137,7 +128,7 @@ const {user} = UseAuth()
                   name="average_cost"
                   type="text"
                   placeholder="Enter Average Cost"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
@@ -149,7 +140,7 @@ const {user} = UseAuth()
                   name="seasonality"
                   type="text"
                   placeholder="Seasonality here"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -161,7 +152,7 @@ const {user} = UseAuth()
                   type="text"
                   name="travel_time"
                   placeholder="Travel Time here"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -173,7 +164,7 @@ const {user} = UseAuth()
                   type="text"
                   name="totalVisitorsPerYear"
                   placeholder="Travel Time here"
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full">
@@ -186,20 +177,21 @@ const {user} = UseAuth()
                   cols="30"
                   rows="3"
                   placeholder="short description..."
-                  className="w-full rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 ></textarea>
               </div>
               <div className="col-span-full">
                 <input
                   type="submit"
                   value="Add"
-                  className="w-full btn btn-primary rounded-md px-2 py-1 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full btn btn-primary rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
             </div>
           </fieldset>
         </form>
       </section>
+      <Toaster></Toaster>
     </div>
   );
 };
