@@ -108,7 +108,7 @@ export const UpdateTourists = () => {
                       name="country_Name"
                       className="select select-bordered"
                     >
-                      <option selected defaultChecked={countryName}>
+                      <option selected value={countryName}>
                         Select Country
                       </option>
                       <option value="Bangladesh">Bangladesh</option>

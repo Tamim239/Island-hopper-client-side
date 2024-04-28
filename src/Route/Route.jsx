@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         {
           path: "/viewDetails/:id",
           element: <ViewDetails></ViewDetails>,
-          loader: ({params})=> fetch(`http://localhost:5173/view/${params.id}`)
+          loader: ({params})=> fetch(`http://localhost:5000/images/${params.id}`)
         },
         {
           path: "/myList",
