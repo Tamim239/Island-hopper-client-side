@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Country = () => {
   return (
-    <div className="grid grid-cols-3 gap-4 my-5 ">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 ">
       <Link to="/countryCard/Bangladesh">
         <section className="p-2">
           <div className="container max-w-xl mx-auto">
