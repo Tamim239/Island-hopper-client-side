@@ -10,7 +10,7 @@ export const ViewDetails = () => {
   console.log(loaderData);
 
   // useEffect(()=>{
-  //   axios.get(`http://localhost:5000/images/${id}`)
+  //   axios.get(`https://island-hopper-server.vercel.app/images/${id}`)
   //   .then(data => {
   //       console.log(data.data)
   //   })

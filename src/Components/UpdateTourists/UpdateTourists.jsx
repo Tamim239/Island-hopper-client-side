@@ -11,7 +11,7 @@ export const UpdateTourists = () => {
   console.log(id);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/singleData/${id}`).then((data) => {
+    axios.get(`https://island-hopper-server.vercel.app/singleData/${id}`).then((data) => {
       console.log(data.data);
       setUserData(data.data);
     });
@@ -54,7 +54,7 @@ export const UpdateTourists = () => {
       description,
     };
     axios
-      .put(`http://localhost:5000/update/${_id}`, collection)
+      .put(`https://island-hopper-server.vercel.app/update/${_id}`, collection)
       .then((data) => {
         console.log(data.data);
         if(data.data.modifiedCount > 0){

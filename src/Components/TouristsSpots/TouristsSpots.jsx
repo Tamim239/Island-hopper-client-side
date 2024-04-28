@@ -7,7 +7,7 @@ export const TouristsSpots = () => {
   const [usersData, setUsers] = useState([])
   
   useEffect(()=>{
-    axios.get('http://localhost:5000/images')
+    axios.get('https://island-hopper-server.vercel.app/images')
     .then(data => {
       setUsers(data.data)
     })

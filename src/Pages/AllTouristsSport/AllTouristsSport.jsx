@@ -8,13 +8,13 @@ export const AllTouristsSport = () => {
   const [usersData, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/images").then((data) => {
+    axios.get("https://island-hopper-server.vercel.app/images").then((data) => {
       setUsers(data.data);
     });
   }, []);
 
   const handleSort = () => {
-    axios.get(`http://localhost:5000/sorted`).then((data) => {
+    axios.get(`https://island-hopper-server.vercel.app/sorted`).then((data) => {
       console.log(data.data);
       setUsers(data.data);
     });

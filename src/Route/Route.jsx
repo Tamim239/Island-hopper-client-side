@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         {
           path: "/viewDetails/:id",
           element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/images/${params.id}`)
+          loader: ({params})=> fetch(`https://island-hopper-server.vercel.app/images/${params.id}`)
         },
         {
           path: "/myList",

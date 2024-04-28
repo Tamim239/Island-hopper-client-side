@@ -36,7 +36,7 @@ export const AddTouristsSport = () => {
       description,
     };
     console.log(collection);
-    axios.post("http://localhost:5000/images", collection).then((data) => {
+    axios.post("https://island-hopper-server.vercel.app/images", collection).then((data) => {
       console.log(data.data);
       if (data?.data?.insertedId) {
         toast.success("successfully added");

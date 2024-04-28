@@ -8,7 +8,7 @@ export const CountryCard = () => {
     console.log(id)
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/double/${id}`)
+    axios.get(`https://island-hopper-server.vercel.app/double/${id}`)
     .then(data =>{
         console.log(data.data);
         setCountryData(data.data);
