@@ -9,6 +9,7 @@ import { MyList } from "../Pages/MyList/MyList";
 import { UpdateTourists } from "../Components/UpdateTourists/UpdateTourists";
 import { ViewDetails } from "../Components/ViewDetails";
 import { ErrorPage } from "../Shared/ErrorPage";
+import { PrivateRoute } from "../Provider/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -38,16 +39,16 @@ export const router = createBrowserRouter([
         },
         {
           path: "/viewDetails/:id",
-          element: <ViewDetails></ViewDetails>,
+          element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
           loader: ({params})=> fetch(`http://localhost:5000/images/${params.id}`)
         },
         {
           path: "/myList",
-          element: <MyList></MyList>,
+          element: <PrivateRoute><MyList></MyList></PrivateRoute>,
         },
         {
           path: "/updateTourists/:id",
-          element: <UpdateTourists></UpdateTourists>,
+          element: <PrivateRoute><UpdateTourists></UpdateTourists></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5173/myList/${params.id}`),
         }
       ],

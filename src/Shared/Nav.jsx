@@ -5,13 +5,21 @@ import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 import { UseAuth } from "../Hook/UseAuth";
+import { InfinitySpin } from "react-loader-spinner";
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
-  const { user, logOut } = UseAuth();
+  const { user, logOut, loading } = UseAuth();
 
   // console.log(user?.photoURL)
   // console.log(user?.displayName)
+  if (loading) {
+    return (
+      <div className="flex justify-center h-10 items-center">
+        <InfinitySpin visible={true} width="200" color="#4fa94d" />
+      </div>
+    );
+  }
 
   const navLinks = (
     <>
