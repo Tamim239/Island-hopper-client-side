@@ -8,12 +8,13 @@ import { AddTouristsSport } from "../Pages/AddTouristsSport/AddTouristsSport";
 import { MyList } from "../Pages/MyList/MyList";
 import { UpdateTourists } from "../Components/UpdateTourists/UpdateTourists";
 import { ViewDetails } from "../Components/ViewDetails";
+import { ErrorPage } from "../Shared/ErrorPage";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
-    //   errorElement: <ErrorPage />,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
