@@ -10,6 +10,7 @@ import { UpdateTourists } from "../Components/UpdateTourists/UpdateTourists";
 import { ViewDetails } from "../Components/ViewDetails";
 import { ErrorPage } from "../Shared/ErrorPage";
 import { PrivateRoute } from "../Provider/PrivateRoute";
+import { CountryCard } from "../Components/Country/CountryCard";
 
 export const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
           path: "/updateTourists/:id",
           element: <PrivateRoute><UpdateTourists></UpdateTourists></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5173/myList/${params.id}`),
+        },
+        {
+          path: '/countryCard/:id',
+          element: <PrivateRoute><CountryCard></CountryCard></PrivateRoute>
         }
       ],
     },
