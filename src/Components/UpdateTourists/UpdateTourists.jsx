@@ -69,12 +69,12 @@ export const UpdateTourists = () => {
         <Helmet>
           <title>Island Hopper || Update Tourists Spot</title>
         </Helmet>
-        <section className=" bg-slate-300 p-6 dark:bg-gray-100 dark:text-gray-900">
+        <section className=" bg-slate-300 p-6 ">
           <form
             onSubmit={handleUpdate}
             className="container flex flex-col mx-auto space-y-12"
           >
-            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-gray-50">
+            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-slate-900 dark:text-gray-100">
               <div className="space-y-4 col-span-full lg:col-span-2">
                 <h1 className="text-3xl font-bold">Update Tourists Spot</h1>
                 <p className="text-xs md:w-2/3">
@@ -96,17 +96,17 @@ export const UpdateTourists = () => {
                     defaultValue={touristName}
                     name="tourists_spot_name"
                     placeholder="Enter Tourists Spot Name"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
                   <label htmlFor="country_Name" className="text-sm">
                     Country Name
                   </label>
-                  <label htmlFor="country" className="form-control w-full">
+                  <label htmlFor="country" className="form-control w-full dark:text-gray-600">
                     <select
                       name="country_Name"
-                      className="select select-bordered"
+                      className="select select-bordered dark:text-gray-600  "
                     >
                       <option selected value={countryName}>
                         Select Country
@@ -130,7 +130,7 @@ export const UpdateTourists = () => {
                     name="photo"
                     defaultValue={photo}
                     placeholder="Enter Photo URL"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-2">
@@ -142,7 +142,7 @@ export const UpdateTourists = () => {
                     name="location"
                     defaultValue={location}
                     placeholder="Location here"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-2">
@@ -154,7 +154,7 @@ export const UpdateTourists = () => {
                     type="text"
                     defaultValue={averageCost}
                     placeholder="Enter Average Cost"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-2">
@@ -167,7 +167,7 @@ export const UpdateTourists = () => {
                     defaultValue={seasonality}
                     type="text"
                     placeholder="Seasonality here"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
@@ -180,7 +180,7 @@ export const UpdateTourists = () => {
                     name="travel_time"
                     defaultValue={travelTime}
                     placeholder="Travel Time here"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full sm:col-span-3">
@@ -193,7 +193,7 @@ export const UpdateTourists = () => {
                     name="totalVisitorsPerYear"
                     defaultValue={totalVisitor}
                     placeholder="Travel Time here"
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
                 <div className="col-span-full">
@@ -207,14 +207,14 @@ export const UpdateTourists = () => {
                     cols="30"
                     rows="3"
                     placeholder="short description..."
-                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-600 focus:dark:ring-violet-600 dark:border-gray-300"
                   ></textarea>
                 </div>
                 <div className="col-span-full">
                   <input
                     type="submit"
                     value="Update"
-                    className="w-full btn btn-primary rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                    className="w-full btn bg-[#ef4444] text-white rounded-md px-2 py-3 focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
               </div>

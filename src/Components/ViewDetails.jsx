@@ -30,7 +30,7 @@ export const ViewDetails = () => {
             alt=""
             className="w-full h-60 sm:h-96 dark:bg-gray-500"
           />
-          <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 bg-gray-600 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-50">
+          <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 bg-gray-600 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md dark:bg-slate-900 dark:text-gray-100">
             <div className="space-y-2">
               <a
                 rel="noopener noreferrer"
@@ -40,21 +40,21 @@ export const ViewDetails = () => {
                 {loaderData?.touristName}
               </a>
               <div className="flex justify-between text-white">
-                <p className="dark:text-gray-800 text-xl flex items-center gap-1">
+                <p className="dark:text-gray-100 text-xl flex items-center gap-1">
                   <CiLocationOn /> {loaderData?.location}
                 </p>
-                <p className="dark:text-gray-800 text-xl flex items-center gap-1">
+                <p className="dark:text-gray-100 text-xl flex items-center gap-1">
                   <IoTimeOutline /> {loaderData?.travelTime}
                 </p>
               </div>
               <div className="flex gap-4 justify-between text-white">
-                <p className="dark:text-gray-800 text-xl">
+                <p className="dark:text-gray-100 text-xl">
                   seasonality <br />
                   <span className="text-[#1CD8A4]">
                     {loaderData?.seasonality}
                   </span>
                 </p>
-                <p className="dark:text-gray-800 text-xl">
+                <p className="dark:text-gray-100 text-xl">
                   starting <br />
                   <span className="text-[#1CD8A4]">
                     {loaderData?.averageCost}
@@ -62,13 +62,13 @@ export const ViewDetails = () => {
                 </p>
               </div>
               <div className="flex gap-4 justify-between text-white">
-                <p className="dark:text-gray-800 text-xl">
+                <p className="dark:text-gray-100 text-xl">
                   Total Visitor per Year <br />
                   <span className="text-[#1CD8A4]">
                     {loaderData?.totalVisitor}
                   </span>
                 </p>
-                <p className="dark:text-gray-800 text-xl">
+                <p className="dark:text-gray-100 text-xl">
                   Country<br />
                   <span className="text-[#1CD8A4]">
                     {loaderData?.countryName}

@@ -5,35 +5,37 @@ import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 import { UseAuth } from "../Hook/UseAuth";
-// import { InfinitySpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
-  const { user, logOut } = UseAuth();
-  const [theme, setTheme] = useState("light");
+  const { user, logOut, loading } = UseAuth();
+  const [theme, setTheme] = useState("");
+
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("body").setAttribute("class", localTheme);
-    // document.body.classList.add(localTheme)
   }, [theme]);
-
+  
+  // document.body.classList.add(localTheme)
   const handleTheme = (e) => {
     if (e.target.checked) {
       setTheme("dark");
+     
     } else {
       setTheme("light");
     }
   };
   console.log(theme);
-  // if (loading) {
-  //   return (
-  //     <div className="flex justify-center h-10 items-center">
-  //       <InfinitySpin visible={true} width="200" color="#4fa94d" />
-  //     </div>
-  //   )
-  // }
+  if (loading) {
+    return (
+      <div className="flex justify-center h-10 items-center">
+        <InfinitySpin visible={true} width="200" color="#4fa94d" />
+      </div>
+    )
+  }
 
   const navLinks = (
     <>

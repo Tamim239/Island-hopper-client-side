@@ -50,12 +50,12 @@ export const AddTouristsSport = () => {
       <Helmet>
         <title>Island Hopper || add Tourists Spot</title>
       </Helmet>
-      <section className=" bg-slate-300 p-6 dark:bg-gray-100 dark:text-gray-900">
+      <section className=" bg-slate-300 p-6">
         <form
           onSubmit={handleAdd}
           className="container flex flex-col mx-auto space-y-12"
         >
-          <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-gray-50">
+          <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md  dark:bg-slate-900 dark:text-gray-100">
             <div className="space-y-4 col-span-full lg:col-span-2">
               <h1 className="text-3xl font-bold">Add Tourists Spot</h1>
               <p className="text-xs md:w-2/3">
@@ -84,7 +84,7 @@ export const AddTouristsSport = () => {
                   Country Name
                 </label>
                 <label htmlFor="country" className="form-control w-full">
-                  <select name="country_Name" className="select select-bordered ">
+                  <select name="country_Name" className="select select-bordered  dark:text-gray-400">
                     <option selected>
                       Select Country
                     </option>

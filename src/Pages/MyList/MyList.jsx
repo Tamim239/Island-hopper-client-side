@@ -62,7 +62,6 @@ export const MyList = () => {
                 <col />
                 <col />
                 <col />
-                <col />
                 <col className="w-24" />
               </colgroup>
               <thead className="dark:bg-gray-300">
@@ -76,7 +75,7 @@ export const MyList = () => {
               </thead>
               <tbody>
               {
-          usersData?.map(((users, index) => <tr key={users?._id} className="border-b border-opacity-20 dark:border-gray-300 dark:bg-gray-50">
+          usersData?.map(((users, index) => <tr key={users?._id} className="border-b border-opacity-20 dark:bg-slate-900 dark:text-gray-100">
           <td className="p-3">
             <p>{index + 1}</p>
           </td>
