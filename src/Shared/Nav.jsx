@@ -10,7 +10,7 @@ import { InfinitySpin } from "react-loader-spinner";
 export const Nav = () => {
   const [open, setOpen] = useState(false);
   const { user, logOut, loading } = UseAuth();
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState("light");
 
 
   useEffect(() => {

@@ -1,8 +1,12 @@
-# React + Vite
+website Name : Island Hopper
+Live site URL : 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* First you will see a navbar.  There is logo Home, All tourist spot, My list, and login register button.  
 
-Currently, two official plugins are available:
+* Below is the banner that will do the slide show.  Below you will see a tourist spot in the form of a card.  Below you will find the review section which will show in slide form.  There is a contact us section and a footer section.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* If you click on the view details inside the tourist spot record, the details will be shown.  If you click on All tourist spot on navbar, all country data will be shown there.  
+
+* There is a view details button on the card.  Clicking there will show the details of that record.  If you click on My List, it will show in table form, you can see some details.  
+
+* There will be update delete button.  By clicking on Update, the details of the record can be updated.  If you delete again, it will be deleted.
