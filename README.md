@@ -1,5 +1,19 @@
 website Name : Island Hopper
-Live site URL : 
+Live site URL : https://islandhopper.netlify.app/
+
+Selected Category : Southeast Asia
+
+Explore : 
+ React-simple-typewriter
+ React-tooltip
+ Firebase
+ PropTypes
+ Hot Toast
+ React-icons
+ React-Helmet
+ React-Spinner
+ React Hook Form
+ Swiper slider
 
 * First you will see a navbar.  There is logo Home, All tourist spot, My list, and login register button.  
 

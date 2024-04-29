@@ -117,7 +117,7 @@ export const Nav = () => {
             />
           </div>
         ) : (
-          <div>
+          <div className="space-x-3">
             <Link
               to="/login"
               className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group"
