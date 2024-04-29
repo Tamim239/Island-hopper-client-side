@@ -84,7 +84,7 @@ export const AddTouristsSport = () => {
                   Country Name
                 </label>
                 <label htmlFor="country" className="form-control w-full">
-                  <select name="country_Name" className="select select-bordered">
+                  <select name="country_Name" className="select select-bordered ">
                     <option selected>
                       Select Country
                     </option>
@@ -184,7 +184,7 @@ export const AddTouristsSport = () => {
                 <input
                   type="submit"
                   value="Add"
-                  className="w-full btn btn-primary rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full btn bg-[#EF4444] border-0 text-white rounded-md px-2 py-3 focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
             </div>

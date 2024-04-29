@@ -11,6 +11,19 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
       <RouterProvider router={router} />
       </AuthProvider>
-  
   </React.StrictMode>
 );
+
+
+
+// Applying class directly on body
+// function App() {
+//   return (
+//     <div className="dark"> {/* Or remove 'dark' for light mode */}
+//       {/* Your application content */}
+//       <button onClick={() => document.body.classList.toggle('dark')}>
+//         Toggle Dark Mode
+//       </button>
+//     </div>
+//   );
+// }

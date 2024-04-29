@@ -67,7 +67,7 @@ export const UpdateTourists = () => {
     <div>
       <div>
         <Helmet>
-          <title>Island Hopper || add Tourists Spot</title>
+          <title>Island Hopper || Update Tourists Spot</title>
         </Helmet>
         <section className=" bg-slate-300 p-6 dark:bg-gray-100 dark:text-gray-900">
           <form

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export const Country = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 ">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 md:w-4/5 mx-auto ">
       <Link to="/countryCard/Bangladesh">
-        <section className="p-2">
-          <div className="container max-w-xl mx-auto">
-            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-gray-50 dark:text-gray-800">
+        <section className="p-2 ">
+          <div className="container max-w-xl mx-auto ">
+            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-slate-900 dark:text-gray-100">
               <img
                 src="https://iili.io/JUO6cHQ.jpg"
                 alt=""
@@ -25,7 +25,7 @@ export const Country = () => {
       <Link to="/countryCard/Thailand">
         <section className="p-2">
           <div className="container max-w-xl mx-auto">
-            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-slate-900 dark:text-gray-100">
               <img
                 src="https://iili.io/JUOinZ7.jpg"
                 alt=""
@@ -44,7 +44,7 @@ export const Country = () => {
       <Link to="/countryCard/Cambodia">
         <section className="p-2">
           <div className="container max-w-xl mx-auto">
-            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-slate-900 dark:text-gray-100">
               <img
                 src="https://iili.io/JUOiHCX.jpg"
                 alt=""
@@ -63,7 +63,7 @@ export const Country = () => {
       <Link to="/countryCard/Vietnam">
         <section className="p-2">
           <div className="container max-w-xl mx-auto">
-            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-slate-900 dark:text-gray-100">
               <img
                 src="https://iili.io/JUOPNEu.jpg"
                 alt=""
@@ -72,7 +72,7 @@ export const Country = () => {
               <h1 className="text-xl font-bold">Vietnam</h1>
               <blockquote className="max-w-lg text-lg italic font-medium text-center">
                 A Southeast Asian country known for its picturesque landscapes,
-                rich history, delicious cuisine, and resilient people.
+                rich history, and resilient people.Vietnam is fastest-growing economies.
               </blockquote>
             </div>
           </div>
@@ -81,7 +81,7 @@ export const Country = () => {
       <Link to="/countryCard/Malaysia">
         <section className="p-2">
           <div className="container max-w-xl mx-auto">
-            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-slate-900 dark:text-gray-100">
               <img
                 src="https://iili.io/JUO6y0b.jpg"
                 alt=""
@@ -99,7 +99,7 @@ export const Country = () => {
       <Link to="/countryCard/Indonesia">
         <section className="p-2">
           <div className="container max-w-xl mx-auto">
-            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex flex-col items-center w-full p-2 space-y-2 rounded-md shadow-2xl lg:h-full lg:p-2 dark:bg-slate-900 dark:text-gray-100">
               <img
                 src="https://iili.io/JUO68xt.jpg"
                 alt=""

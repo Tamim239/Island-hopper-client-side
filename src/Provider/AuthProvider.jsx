@@ -5,10 +5,16 @@ import PropTypes from 'prop-types';
 
 export const AuthContext = createContext(null);
 
+export const DarkModeContext = createContext({
+    darkMode: false,
+    toggleDarkMode: () => {},
+  });
+
 const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
 
 export const AuthProvider = ({ children }) => {
+    const [darkMode, setDarkMode] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -51,6 +57,9 @@ return ()=>{
 }
 },[])
 
+const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   const authInfo = {
     user,
@@ -62,6 +71,8 @@ return ()=>{
     logOut,
     updateUser,
     loading,
+    darkMode, 
+    toggleDarkMode
   };
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };

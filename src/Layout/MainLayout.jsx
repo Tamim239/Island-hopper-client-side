@@ -4,7 +4,7 @@ import { Footer } from "../Shared/Footer";
 
 export const MainLayout = () => {
   return (
-    <div>
+    <div className="bg-white">
       <Nav></Nav>
       <Outlet></Outlet>
       <Footer></Footer>

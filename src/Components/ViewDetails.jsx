@@ -1,5 +1,6 @@
 // import axios from "axios"
 // import { useEffect } from "react"
+import { Helmet } from "react-helmet";
 import { CiLocationOn } from "react-icons/ci";
 import { IoTimeOutline } from "react-icons/io5";
 import { useLoaderData } from "react-router-dom";
@@ -19,6 +20,9 @@ export const ViewDetails = () => {
 
   return (
     <div>
+         <Helmet>
+        <title>Island Hopper || View Details {loaderData?._id}</title>
+      </Helmet>
       <div className="p-5 mx-auto sm:p-10 md:p-16 dark:bg-gray-100 dark:text-gray-800">
         <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
           <img

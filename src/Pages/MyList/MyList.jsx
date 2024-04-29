@@ -3,6 +3,7 @@ import { UseAuth } from "../../Hook/UseAuth";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export const MyList = () => {
   const [usersData, setUsers] = useState([]);
@@ -49,6 +50,9 @@ export const MyList = () => {
 
   return (
     <div className="p-5">
+      <Helmet>
+        <title>Island Hopper || MyList</title>
+      </Helmet>
       <div>
       <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
           <div className="overflow-x-auto">

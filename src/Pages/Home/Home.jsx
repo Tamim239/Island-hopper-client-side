@@ -7,7 +7,7 @@ import { ContactUs } from "../../Components/ContactUs/ContactUs"
 
 export const Home = () => {
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Island Hopper || Home</title>
       </Helmet>

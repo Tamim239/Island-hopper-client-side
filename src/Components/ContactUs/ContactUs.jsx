@@ -1,8 +1,8 @@
 
 export const ContactUs = () => {
   return (
-    <div className="my-5">
-        <section className="py-6 dark:bg-gray-100 dark:text-gray-900 bg-gray-300">
+    <div className="my-5 ">
+        <section className="py-6 dark:bg-slate-900 dark:text-gray-100 bg-gray-300">
 	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
 		<div className="py-6 md:py-0 md:px-6">
 			<h1 className="text-4xl font-bold">Get in touch</h1>
@@ -29,7 +29,7 @@ export const ContactUs = () => {
 				</p>
 			</div>
 		</div>
-		<form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+		<form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 dark:bg-slate-900 dark:text-gray-100">
 			<label className="block">
 				<span className="mb-1">Full name</span>
 				<input type="text" placeholder="Leroy Jenkins" className="block w-full px-1 py-2 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
@@ -42,7 +42,7 @@ export const ContactUs = () => {
 				<span className="mb-1">Message</span>
 				<textarea rows="3" placeholder="Write here.." className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"></textarea>
 			</label>
-			<button type="button" className="self-center px-8 py-3 btn btn-primary text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-600 dark:text-gray-50 focus:dark:ring-violet-600 hover:dark:ring-violet-600">Submit</button>
+			<button type="button" className="self-center px-8 py-3 btn bg-[#EF4444] border-0 text-white text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-600 dark:text-gray-50 focus:dark:ring-violet-600 hover:dark:ring-violet-600">Submit</button>
 		</form>
 	</div>
 </section>
