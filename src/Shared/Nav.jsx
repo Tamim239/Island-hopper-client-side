@@ -83,7 +83,7 @@ export const Nav = () => {
   );
 
   return (
-    <nav className="flex items-center justify-between mx-10 ">
+    <nav className="flex items-center justify-between md:mx-10 ">
       <div onClick={() => setOpen(!open)} className="lg:hidden text-2xl">
         {open ? <IoMdClose /> : <FiMenu />}
       </div>
@@ -117,10 +117,10 @@ export const Nav = () => {
             />
           </div>
         ) : (
-          <div className="space-x-3">
+          <div className="flex items-center space-x-3">
             <Link
               to="/login"
-              className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group"
+              className="relative inline-flex items-center justify-start px-3 md:px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group"
             >
               <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
                 <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
@@ -132,7 +132,7 @@ export const Nav = () => {
             </Link>
             <Link
               to="/register"
-              className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group"
+              className="relative inline-flex items-center justify-start px-3 md:px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group"
             >
               <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
                 <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
@@ -158,7 +158,7 @@ export const Nav = () => {
             </span>
           </button>
         )}
-        <label className="swap swap-rotate">
+        <label className="swap swap-rotate mr-2">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
@@ -168,7 +168,7 @@ export const Nav = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-off fill-current w-10 h-10"
+            className="swap-off fill-current w-8 h-8"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -177,7 +177,7 @@ export const Nav = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-on fill-current w-10 h-10"
+            className="swap-on fill-current w-8 h-8"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

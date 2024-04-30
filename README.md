@@ -15,7 +15,7 @@ Explore :
  React Hook Form
  Swiper slider
 
-* First you will see a navbar.  There is logo Home, All tourist spot, My list, and login register button.  
+* First you will see a navbar.  There is logo Home, All tourist spot, Add Tourists Spot, My list, and login register button.  
 
 * Below is the banner that will do the slide show.  Below you will see a tourist spot in the form of a card.  Below you will find the review section which will show in slide form.  There is a contact us section and a footer section.  
 

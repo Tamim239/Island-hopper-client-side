@@ -35,3 +35,12 @@ body {
   border-radius: 10px;
   background-size: cover;
 }
+
+
+@media screen and (max-width: 768px) {
+  
+  .swiper{
+    padding-top: 0px;
+  }
+
+}

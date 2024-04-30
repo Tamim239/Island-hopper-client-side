@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/addTourists",
-          element: <AddTouristsSport></AddTouristsSport>,
+          element: <PrivateRoute><AddTouristsSport></AddTouristsSport></PrivateRoute> ,
         },
         {
           path: "/viewDetails/:id",

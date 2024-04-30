@@ -14,7 +14,7 @@ export const TouristsSpots = () => {
   }, []);
 
   return (
-    <div className="my-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:w-4/5 mx-auto ">
+    <div className=" max-sm:mt-48 my-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:w-4/5 mx-auto ">
       <Helmet>
         <title>Island Hopper || Tourists Spot</title>
       </Helmet>
