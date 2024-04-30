@@ -26,7 +26,7 @@ export const TouristsSpots = () => {
           <img
             src={img?.photo}
             alt=""
-            className="object-cover object-center w-full rounded-t-md h-72  hover:scale-105 hover:duration-700 hover:ease-in"
+            className="object-cover object-center w-full rounded-t-md h-72  md:hover:scale-105 hover:duration-700 hover:ease-in"
           />
           <div className="flex flex-col justify-between p-3 space-y-3 dark:bg-slate-900 dark:text-white">
             <div>

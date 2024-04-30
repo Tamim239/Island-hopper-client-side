@@ -91,7 +91,7 @@ export const Nav = () => {
   );
 
   return (
-    <nav className="flex items-center justify-between md:mx-10 my-5">
+    <nav className="flex items-center justify-between md:mx-10 my-2">
       <div onClick={() => setOpen(!open)} className="lg:hidden text-2xl">
         {open ? <IoMdClose /> : <FiMenu />}
       </div>
