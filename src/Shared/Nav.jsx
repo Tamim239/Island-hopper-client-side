@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 import { UseAuth } from "../Hook/UseAuth";
-import { InfinitySpin } from "react-loader-spinner";
+// import { InfinitySpin } from "react-loader-spinner";
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
-  const { user, logOut, loading } = UseAuth();
-  const [theme, setTheme] = useState("light");
+  const { user, logOut } = UseAuth();
+  const [theme, setTheme] = useState(localStorage.getItem("theme")? localStorage.getItem("theme") : "light");
 
 
   useEffect(() => {
@@ -28,14 +28,14 @@ export const Nav = () => {
       setTheme("light");
     }
   };
-  console.log(theme);
-  if (loading) {
-    return (
-      <div className="flex justify-center h-10 items-center">
-        <InfinitySpin visible={true} width="200" color="#4fa94d" />
-      </div>
-    )
-  }
+
+  // if (loading) {
+    
+  //     <div className="flex justify-center h-10 items-center">
+  //       <InfinitySpin visible={true} width="200" color="#4fa94d" />
+  //     </div>
+   
+  // }
 
   const navLinks = (
     <>
@@ -59,6 +59,9 @@ export const Nav = () => {
           All Tourists Spot
         </NavLink>
       </li>
+     
+     {
+      user && 
       <li>
         <NavLink
           to="/addTourists"
@@ -69,6 +72,10 @@ export const Nav = () => {
           Add Tourists Spot
         </NavLink>
       </li>
+     }
+
+      {
+        user && 
       <li>
         <NavLink
           to="/myList"
@@ -79,11 +86,12 @@ export const Nav = () => {
           My List
         </NavLink>
       </li>
+      }
     </>
   );
 
   return (
-    <nav className="flex items-center justify-between md:mx-10 ">
+    <nav className="flex items-center justify-between md:mx-10 my-5">
       <div onClick={() => setOpen(!open)} className="lg:hidden text-2xl">
         {open ? <IoMdClose /> : <FiMenu />}
       </div>
@@ -163,6 +171,7 @@ export const Nav = () => {
           <input
             type="checkbox"
             onChange={handleTheme}
+            checked={theme === "light" ? false : true}
             className="theme-controller"
           />
 

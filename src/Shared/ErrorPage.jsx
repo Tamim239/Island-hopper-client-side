@@ -5,7 +5,7 @@ export const ErrorPage = () => {
   return (
     <div>
         <div className="flex justify-center">
-        <img src={error} alt="" className="h-96 object-cover"/>
+        <img src={error} alt="" className=" md:h-[500px] object-cover"/>
       </div>
       <div className="text-center">
         <Link to="/">

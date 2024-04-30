@@ -20,26 +20,10 @@ export const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    // console.log(email, password);
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
         navigate(location?.state ? location.state : "/");
-        // const user = {
-        //   email,
-        //   lastSignAt: res.user?.metadata?.lastSignInTime,
-        // };
-        // fetch("https://coffe-store-server-liart.vercel.app/user", {
-        //   method: "PATCH",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(user),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //   });
       })
       .catch(() => {
         toast.error("email and password combination is incorrect");
